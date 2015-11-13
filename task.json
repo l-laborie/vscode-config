@@ -1,0 +1,32 @@
+{
+    "version": "0.1.0",
+    "taskName": "pylint",
+    "windows" : {
+        "command": "C:\\Python27\\Scripts\\pylint.exe"
+    },
+    "linux" : {
+        "command": "pylint"
+    },
+
+    // The command is a shell script
+    "isShellCommand": true,
+    "isBuildCommand": true,
+
+    // Show the output window only if unrecognized errors occur.
+    "showOutput": "never",
+
+    // args is the HelloWorld program to compile.
+    "args": ["${file}", "--output-format=parseable"],
+
+    "problemMatcher": {
+        "owner": "python",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+            "regexp": "(.+):(\\d+): (.+)",
+            "file": 1,
+            "line": 2,
+            "code": 3,
+            "message": 3
+            }
+    }
+}
